@@ -110,10 +110,7 @@ hr-rag-assistant/
 | `/chat` | POST | Main chat endpoint |
 
 **API Documentation:** Visit http://localhost:8000/docs for interactive API explorer
-<<<<<<< Updated upstream
-=======
 
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) file for details.
->>>>>>> Stashed changes

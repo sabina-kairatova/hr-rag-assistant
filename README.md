@@ -13,7 +13,7 @@
 ✅ Implements observability with LangSmith tracing for optimized performance  
 ✅ Provides FastAPI application with health checks  
 
-## High-Level Architecture
+## 🏛️ High-Level Architecture
 
 <div align="center">
 

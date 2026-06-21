@@ -5,8 +5,6 @@ from qdrant_client.models import Distance, VectorParams
 
 from app.config import get_settings
 
-# from config import get_settings
-
 
 def get_qdrant_client() -> QdrantClient:
     """Initialize Qdrant client with environment-aware configuration.

@@ -16,10 +16,6 @@ logger = get_logger()
 # === Agent State ===
 
 class AgentState(TypedDict):
-    """
-    State for the production agent.
-    Uses Annotated with add_messages reducer for message accumulation.
-    """
     messages: Annotated[list[BaseMessage], add_messages]
     error: Optional[str]
     retry_count: int
@@ -27,7 +23,7 @@ class AgentState(TypedDict):
 
 class ProductionAgent:
     """
-    Production LangGraph Agent with:
+    LangGraph Agent with:
     - Retry on failure (model fallback)
     - Graceful error handling
     - LangSmith tracing
@@ -192,26 +188,3 @@ class ProductionAgent:
             "model_used": result.get("model_used", "unknown"),
             "error": result.get("error")
         }
-
-
-# if __name__ == "__main__":
-#     import asyncio
-
-#     agent = ProductionAgent()
-#     print("=== Production Agent ===")
-#     print()
-
-#     queries = [
-#         'Does your company provide retirement plan? Answer in 2 sentences',
-#         'Explain what is COBRA in Health Benefits in 2 sentences.',
-#         'What are the expectaions of the company of emplyees work performance? Answer in 2 sentences.'
-#     ]
-
-#     for query in queries:
-#         result = asyncio.run(agent.invoke(query))
-#         print("Question:", query)
-#         print("Response:", result["response"])
-#         print("Model used:", result["model_used"])
-#         print("Error:", result["error"])
-#         print()
-

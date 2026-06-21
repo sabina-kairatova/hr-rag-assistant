@@ -5,7 +5,6 @@ from typing import Optional
 class ResponseCahce:
     """
     In-memory response cache with TTL (time-to-live).
-
     """
 
     def __init__(self, ttl_seconds: int = 300):

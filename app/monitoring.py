@@ -1,17 +1,11 @@
-"""
-Monitoring & Structured Logging.
-Production-grade metrics collection and JSON logging.
-"""
-
 import logging 
 import json
 import time
 from datetime import datetime, timezone
-from functools import wraps
 
 
 class JSONFormatter(logging.Formatter):
-    """Format log records as a JSON for log aggregation (ELK, Datalog,)"""
+    """Format log records as a JSON for log aggregation"""
     
     def format(self, record):
         log_obj = {
@@ -43,9 +37,6 @@ def get_logger(name: str = "production-api") -> logging.Logger:
 class MetricsCollector():
     """
     Collects and aggregates application metrics.
-
-    In production, replace with Prometheus client:
-        from prometheus_client import Counter, Histogram
     """
 
     def __init__(self):

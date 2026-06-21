@@ -9,11 +9,6 @@ from app.monitoring import get_logger
 from app.embeddings import create_embeddings
 from app.vector_store import get_vector_store
 
-# from monitoring import get_logger
-# from embeddings import create_embeddings
-# from vector_store import get_vector_store
-
-
 logger = get_logger()
 
 DATA_DIRECTORY = "./data"

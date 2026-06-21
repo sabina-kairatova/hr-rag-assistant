@@ -1,7 +1,3 @@
-"""
-Pydantic models for input validation and response structure
-"""
-
 from pydantic import BaseModel, Field
 from datetime import datetime
 
@@ -28,7 +24,7 @@ class ChatResponse(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now())
 
 class RetrieverResponse(BaseModel):
-    """Response modelf from retriever"""
+    """Response model from retriever"""
     document_id: str
     content: str
     matadata: dict = None

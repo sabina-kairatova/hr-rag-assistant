@@ -119,7 +119,6 @@ class OutputValidator:
 class SecurityPipeline:
     """
     Full security pipeline that processes input and output.
-    This is the single class you wire into your API.
     """
     
     def __init__(self):
@@ -131,7 +130,7 @@ class SecurityPipeline:
     def check_input(self, text: str) -> tuple[bool, str, list[str]]:
         """
         Process input through security checks.
-        Retuens: (is_allowed, cleaned_text, security_notes)
+        Returns: (is_allowed, cleaned_text, security_notes)
         """
         notes = []
 

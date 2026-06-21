@@ -34,7 +34,6 @@ logger = get_logger()
 async def lifespan(app: FastAPI):
     """
     Initialize all components on startup, clean up on shutdown.
-    This is the modern FastAPI pattern (replaces @app.on_event).
     """
 
     global security, cache, metrics, agent
@@ -59,7 +58,7 @@ async def lifespan(app: FastAPI):
 
     logger.info("All components initialized. Ready to serve requests.")
 
-    yield # App is running
+    yield
 
     logger.info("Shutting down...", extra={"extra_data": metrics.summary})
 
@@ -195,7 +194,6 @@ async def chat(request: Request, body: ChatRequest):
 
 @app.get("/health", response_model=HealthResponse)
 async def health():
-    """Health check for Docker/Kubernetes."""
     settings = get_settings()
     checks = {
         "agent": agent is not None,

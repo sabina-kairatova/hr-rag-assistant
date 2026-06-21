@@ -25,7 +25,7 @@ class ChatResponse(BaseModel):
     model_used: str
     cached: bool = False
     processing_time_ms: float
-    timestamp: str = Field(default_factory=lambda: datetime.now())
+    timestamp: datetime = Field(default_factory=lambda: datetime.now())
 
 class RetrieverResponse(BaseModel):
     """Response modelf from retriever"""

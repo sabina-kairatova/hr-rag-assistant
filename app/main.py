@@ -19,7 +19,6 @@ from app.agent import ProductionAgent
 from app.vector_store import get_qdrant_client
 from app.build_knowledge_base import build_and_load_knowledge_base
 
-
 load_dotenv()
 
 security: SecurityPipeline = None
